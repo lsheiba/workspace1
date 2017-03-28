@@ -1,9 +1,9 @@
-name: tensorflow-develnotoken
-home: https://github.com/lsheiba/tensorflow-devel-no-token.git
+name: tfj-v2
+home: https://github.com/lsheiba/tfj-v2.git
 version: 1.0.0
 description: Tensorflow + Jupiter no authentication
 sources:
-  - https://github.com/lsheiba/tensorflow-devel-no-token.git
+  - https://github.com/lsheiba/tfj-v2.git
 maintainers:
   - name: Leonard Sheiba
 keywords:
