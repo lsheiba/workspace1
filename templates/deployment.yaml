@@ -31,7 +31,7 @@ spec:
         - containerPort: 8888
           name: http
         - containerPort: 6006
-          name: http   
+          name: tensor-board   
         volumeMounts:
         - name: notebooks
           mountPath: "/notebooks/{{ .Chart.Name }}"
