@@ -1,9 +1,9 @@
-name: tfj-v2
-home: https://github.com/lsheiba/tfj-v2.git
+name: tfj-v3
+home: https://github.com/lsheiba/tfj-v3.git
 version: 1.0.0
 description: Tensorflow + Jupiter no authentication
 sources:
-  - https://github.com/lsheiba/tfj-v2.git
+  - https://github.com/lsheiba/tfj-v3.git
 maintainers:
   - name: Leonard Sheiba
 keywords:
