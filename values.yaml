@@ -1,0 +1,15 @@
+replicas: 1
+cpu:
+  requests: "25m"
+  limits: "100m"
+memory:
+  requests: "64Mi"
+  limits: "2048Mi"
+serviceType: LoadBalancer
+image:
+  Name: lsheiba/tensorflow-ls-devel
+  Tag: latest
+persistence:
+    enabled: true
+    accessMode: ReadWriteOnce
+    size: 1Gi

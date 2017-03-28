@@ -1,0 +1,45 @@
+apiVersion: extensions/v1beta1
+kind: Deployment
+metadata:
+  name: "{{ printf "%s-%s" .Release.Name .Chart.Name | trunc 24 }}"
+  labels:
+    heritage: {{.Release.Service | quote }}
+    release: {{.Release.Name | quote }}
+    chart: "{{ .Chart.Name }}-{{ .Chart.Version }}"
+  annotations:
+    helm.sh/created: {{.Release.Time.Seconds | quote }}
+spec:
+  replicas: {{ default 1 .Values.replicas }}
+  template:
+    metadata:
+      labels:
+        heritage: {{ .Release.Service | quote }}
+        release: {{ .Release.Name | quote }}
+        chart: {{ .Chart.Name }}
+    spec:
+      containers:
+      - name: tensorflow
+        resources:
+          requests:
+            cpu: "{{ .Values.cpu.requests }}"
+            memory: "{{ .Values.memory.requests }}"
+          limits:
+            cpu: "{{ .Values.cpu.limits }}"
+            memory: "{{ .Values.memory.limits }}"
+        image: "{{ printf "%s:%s" .Values.image.Name .Values.image.Tag }}"
+        ports:
+        - containerPort: 8888
+          name: http
+        - containerPort: 6006
+          name: http
+        volumeMounts:
+        - name: notebooks
+          mountPath: "/notebooks/{{ .Chart.Name }}"
+      volumes:
+        - name: notebooks
+          {{- if .Values.persistence.enabled }}
+          persistentVolumeClaim:
+            claimName: "{{ printf "%s-%s" .Release.Name .Chart.Name | trunc 24 }}"
+          {{- else }}
+          emptyDir: {}
+          {{- end }}
