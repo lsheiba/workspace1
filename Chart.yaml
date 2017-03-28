@@ -1,4 +1,4 @@
-name: tensorflow-devel-no-token
+name: tensorflow-develnotoken
 home: https://github.com/lsheiba/tensorflow-devel-no-token.git
 version: 1.0.0
 description: Tensorflow + Jupiter no authentication
