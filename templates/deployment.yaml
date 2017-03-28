@@ -30,6 +30,8 @@ spec:
         ports:
         - containerPort: 8888
           name: http
+        - containerPort: 6006
+          name: http   
         volumeMounts:
         - name: notebooks
           mountPath: "/notebooks/{{ .Chart.Name }}"
