@@ -5,7 +5,7 @@ cpu:
 memory:
   requests: "64Mi"
   limits: "2048Mi"
-serviceType: LoadBalancer
+serviceType: ClusterIP
 image:
   Name: lsheiba/tensorflow-ls-devel
   Tag: latest
