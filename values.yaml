@@ -12,4 +12,4 @@ image:
 persistence:
     enabled: true
     accessMode: ReadWriteOnce
-    size: 1Gi
+    size: 16Gi
