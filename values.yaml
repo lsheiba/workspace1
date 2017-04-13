@@ -1,7 +1,7 @@
 replicas: 1
 cpu:
-  requests: "8000m"
-  limits: "100m"
+  requests: "100m"
+  limits: "8000m"
 memory:
   requests: "64Mi"
   limits: "16Gi"
