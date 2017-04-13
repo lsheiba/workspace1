@@ -7,7 +7,7 @@ memory:
   limits: "2048Mi"
 serviceType: ClusterIP
 image:
-  Name: lsheiba/tensorflow-ls-devel
+  Name: lsheiba/fast-neural-style:latest
   Tag: latest
 persistence:
     enabled: true
