@@ -1,9 +1,9 @@
-name: tfj-v3
-home: https://github.com/lsheiba/tfj-v3.git
+name: fast-neural-style
+home: https://github.com/lsheiba/fast-neural-style.git
 version: 1.0.0
 description: Tensorflow + Jupiter no authentication
 sources:
-  - https://github.com/lsheiba/tfj-v3.git
+  - https://github.com/lsheiba/fast-neural-style.git
 maintainers:
   - name: Leonard Sheiba
 keywords:
