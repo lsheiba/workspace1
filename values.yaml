@@ -1,10 +1,10 @@
 replicas: 1
 cpu:
-  requests: "25m"
+  requests: "8000m"
   limits: "100m"
 memory:
   requests: "64Mi"
-  limits: "2048Mi"
+  limits: "16Gi"
 serviceType: ClusterIP
 image:
   Name: lsheiba/fast-neural-style
