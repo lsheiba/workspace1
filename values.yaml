@@ -7,7 +7,7 @@ memory:
   limits: "2048Mi"
 serviceType: ClusterIP
 image:
-  Name: lsheiba/fast-neural-style:latest
+  Name: lsheiba/fast-neural-style
   Tag: latest
 persistence:
     enabled: true
