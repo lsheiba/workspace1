@@ -12,7 +12,7 @@ spec:
   type: {{ .Values.serviceType }}
   ports:
     - port: 8888
-      name: jupyter-notebook
+      name: jupyter
       targetPort: 8888
     - port: 6006
       name: tensor-board
