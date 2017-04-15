@@ -7,11 +7,10 @@ metadata:
       heritage: {{.Release.Service | quote }}
       release: {{.Release.Name | quote }}
       chart: "{{.Chart.Name}}-{{.Chart.Version}}"
-  annotations:
-  {{- if .Values.persistence.storageClass }}
-    volume.beta.kubernetes.io/storage-class: {{ .Values.persistence.storageClass | quote }}
-  {{- end }}
 spec:
+  {{- if .Values.persistence.storageClass }}
+  storageClassName: {{ .Values.persistence.storageClass | quote }}
+  {{- end }}
   accessModes:
     - {{ .Values.persistence.accessMode | quote }}
   resources:

@@ -11,6 +11,7 @@ image:
   Tag: latest
 persistence:
     enabled: true
+    storageClass: nfs
     nfs:
       server: 192.168.1.55
       path: "/kuberlab"
