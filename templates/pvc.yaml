@@ -21,6 +21,6 @@ spec:
   selector:
     matchLabels:
       release: {{.Release.Name | quote }}
-      chart: "{{ printf "%s-%s" .Release.Name .Chart.Name | trunc 24 }}"
+      chart: "{{.Chart.Name}}-{{.Chart.Version}}"
   {{- end }}
 {{- end -}}
