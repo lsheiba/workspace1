@@ -10,10 +10,6 @@ metadata:
   annotations:
   {{- if .Values.persistence.storageClass }}
     volume.beta.kubernetes.io/storage-class: {{ .Values.persistence.storageClass | quote }}
-  {{- else }}
-  {{- if not .Values.persistence.nfs.server }}
-    volume.alpha.kubernetes.io/storage-class: default
-  {{- end }}
   {{- end }}
 spec:
   accessModes:
