@@ -29,7 +29,7 @@ spec:
         image: "{{ printf "%s:%s" .Values.image.Name .Values.image.Tag }}"
         ports:
         - containerPort: 8888
-          name: jupyter-notebook
+          name: jupyter
         - containerPort: 6006
           name: tensor-board 
         - containerPort: 4200
