@@ -1,0 +1,18 @@
+{{- if .Values.persistence.nfs.server -}}
+apiVersion: v1
+kind: PersistentVolume
+metadata:
+  name: "{{ printf "%s-%s" .Release.Name .Chart.Name | trunc 24 }}"
+  labels:
+    heritage: {{.Release.Service | quote }}
+    release: {{.Release.Name | quote }}
+    chart: "{{.Chart.Name}}-{{.Chart.Version}}"
+spec:
+  accessModes:
+  - {{ .Values.persistence.accessMode | quote }}
+  capacity:
+    storage: {{ .Values.persistence.size | quote }}
+  nfs:
+    path: {{ .Values.persistence.nfs.path }}
+    server: {{ .Values.persistence.nfs.server }}
+{{- end -}}
