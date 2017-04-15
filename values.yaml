@@ -11,5 +11,8 @@ image:
   Tag: latest
 persistence:
     enabled: true
-    accessMode: ReadWriteOnce
+    nfs:
+      server: 127.0.0.1
+      path: "/"
+    accessMode: ReadWriteMany
     size: 16Gi
