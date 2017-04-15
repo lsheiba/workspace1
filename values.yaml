@@ -12,7 +12,7 @@ image:
 persistence:
     enabled: true
     nfs:
-      server: 127.0.0.1
-      path: "/"
+      server: 192.168.1.55
+      path: "/kuberlab"
     accessMode: ReadWriteMany
     size: 16Gi
