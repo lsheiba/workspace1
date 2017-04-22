@@ -1,9 +1,9 @@
-name: fast-neural-style
-home: https://github.com/lsheiba/fast-neural-style.git
+name: tensorflow-jupyter
+home: https://github.com/lsheiba/tensorflow-jupyter.git
 version: 1.0.0
 description: Fast Neural Style Transfer
 sources:
-  - https://github.com/lsheiba/fast-neural-style.git
+  - https://github.com/lsheiba/tensorflow-jupyter.git
 maintainers:
   - name: Leonard Sheiba
 keywords:
