@@ -33,8 +33,6 @@ spec:
         volumeMounts:
         - name: notebooks
           mountPath: "/notebooks/{{ .Values.persistence.inputdir }}"
-        - name: logs
-          mountPath: "{{ .Values.persistence.logdir }}
       volumes:
         - name: notebooks
           {{- if .Values.persistence.enabled }}
