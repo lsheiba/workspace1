@@ -1,7 +1,7 @@
 name: fast-neural-style
 home: https://github.com/lsheiba/fast-neural-style.git
 version: 1.0.0
-description: Tensorflow + Jupiter no authentication
+description: Fast Neural Style Transfer
 sources:
   - https://github.com/lsheiba/fast-neural-style.git
 maintainers:
