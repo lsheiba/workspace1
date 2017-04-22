@@ -32,7 +32,7 @@ spec:
           name: jupyter
         volumeMounts:
         - name: notebooks
-          mountPath: "/notebooks/{{ .Values.persistence.inputdir }}"
+          mountPath: "/notebooks/{{ .Chart.Name }}"
       volumes:
         - name: notebooks
           {{- if .Values.persistence.enabled }}
