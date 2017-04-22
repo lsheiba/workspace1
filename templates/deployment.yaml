@@ -30,10 +30,6 @@ spec:
         ports:
         - containerPort: 8888
           name: jupyter
-        - containerPort: 6006
-          name: tensor-board 
-        - containerPort: 4200
-          name: shellinabox
         volumeMounts:
         - name: notebooks
           mountPath: "/notebooks/{{ .Chart.Name }}"
