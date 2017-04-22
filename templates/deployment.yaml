@@ -32,7 +32,7 @@ spec:
           name: jupyter
         volumeMounts:
         - name: notebooks
-          mountPath: "/notebooks/kuberlab/mnist"
+          mountPath: "/notebooks"
       volumes:
         - name: notebooks
           {{- if .Values.persistence.enabled }}
