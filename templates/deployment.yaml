@@ -18,7 +18,7 @@ spec:
         chart: {{ .Chart.Name }}
     spec:
       containers:
-      - name: fast-neural-style
+      - name: tensorflow-jupyter
         resources:
           requests:
             cpu: "{{ .Values.cpu.requests }}"
