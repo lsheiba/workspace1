@@ -1,7 +1,7 @@
 name: tensorflow-jupyter
 home: https://github.com/lsheiba/tensorflow-jupyter.git
 version: 1.0.0
-description: Fast Neural Style Transfer
+description: Tensorflow Jupyter Notebook
 sources:
   - https://github.com/lsheiba/tensorflow-jupyter.git
 maintainers:
