@@ -14,12 +14,6 @@ spec:
     - port: 8888
       name: jupyter
       targetPort: 8888
-    - port: 6006
-      name: tensor-board
-      targetPort: 6006
-    - port: 4200
-      name: shellinabox
-      targetPort: 4200
   selector:
     release: {{.Release.Name | quote }}
     chart: "{{.Chart.Name}}"
