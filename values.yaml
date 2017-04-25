@@ -7,7 +7,7 @@ memory:
   limits: "16Gi"
 serviceType: ClusterIP
 image:
-  Name: lsheiba/tensorflow-ls-devel
+  Name: lsheiba/tensorflow-ls-devel-gpu
   Tag: latest
 persistence:
     enabled: true
