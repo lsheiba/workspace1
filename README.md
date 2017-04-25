@@ -1,1 +1,1 @@
-# tensorflow-jupyter
+# tensorflow-jupyter-gpu
