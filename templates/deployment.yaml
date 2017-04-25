@@ -34,7 +34,7 @@ spec:
           name: jupyter
         env:
         - name: LD_LIBRARY_PATH
-          value: "$LD_LIBRARY_PATH:/usr/lib/nvidia:/usr/lib/cuda"        
+          value: "$LD_LIBRARY_PATH:/usr/lib/nvidia:/usr/lib/cuda:/usr/local/cuda/extras/CUPTI/lib6"        
         volumeMounts:
         - name: notebooks
           mountPath: "/notebooks/{{ .Chart.Name }}"
