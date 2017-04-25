@@ -23,6 +23,7 @@ spec:
           requests:
             cpu: "{{ .Values.cpu.requests }}"
             memory: "{{ .Values.memory.requests }}"
+            alpha.kubernetes.io/nvidia-gpu: 1
           limits:
             cpu: "{{ .Values.cpu.limits }}"
             memory: "{{ .Values.memory.limits }}"
@@ -31,10 +32,21 @@ spec:
         ports:
         - containerPort: 8888
           name: jupyter
+        env:
+        - name: LD_LIBRARY_PATH
+          value: "$LD_LIBRARY_PATH:/usr/lib/nvidia:/usr/lib/cuda"        
         volumeMounts:
         - name: notebooks
           mountPath: "/notebooks"
-      volumes:
+        - mountPath: /usr/local/nvidia/bin
+          name: bin
+        - mountPath: /usr/lib/nvidia
+          name: lib
+        - mountPath: /usr/lib/cuda
+          name: libcuda
+        - mountPath: /usr/local/cuda/extras/CUPTI/lib64
+          name: capti
+        volumes:
         - name: notebooks
           {{- if .Values.persistence.enabled }}
           persistentVolumeClaim:
@@ -42,3 +54,15 @@ spec:
           {{- else }}
           emptyDir: {}
           {{- end }}
+        - name: bin
+        hostPath: 
+          path: /usr/lib/nvidia-375/bin
+        - name: lib
+        hostPath: 
+          path: /usr/lib/nvidia-375
+        - name: libcuda
+        hostPath: 
+          path: /usr/lib/x86_64-linux-gnu
+        - hostPath:
+          path: /usr/local/cuda/extras/CUPTI/lib64
+        name: capti
