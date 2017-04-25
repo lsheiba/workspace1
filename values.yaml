@@ -3,7 +3,7 @@ cpu:
   requests: "100m"
   limits: "8000m"
 memory:
-  requests: "64Mi"
+  requests: "4Gi"
   limits: "16Gi"
 serviceType: ClusterIP
 image:
