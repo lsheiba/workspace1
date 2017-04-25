@@ -18,7 +18,7 @@ spec:
         chart: {{ .Chart.Name }}
     spec:
       containers:
-      - name: tensorflow-jupyter-gpu
+      - name: fast-neural-style
         resources:
           requests:
             cpu: "{{ .Values.cpu.requests }}"
@@ -37,7 +37,7 @@ spec:
           value: "$LD_LIBRARY_PATH:/usr/lib/nvidia:/usr/lib/cuda"        
         volumeMounts:
         - name: notebooks
-          mountPath: "/notebooks"
+          mountPath: "/notebooks/{{ .Chart.Name }}"
         - mountPath: /usr/local/nvidia/bin
           name: bin
         - mountPath: /usr/lib/nvidia
@@ -46,23 +46,23 @@ spec:
           name: libcuda
         - mountPath: /usr/local/cuda/extras/CUPTI/lib64
           name: capti
-        volumes:
-        - name: notebooks
-          {{- if .Values.persistence.enabled }}
-          persistentVolumeClaim:
-            claimName: "{{ printf "%s-%s" .Release.Name .Chart.Name | trunc 24 }}"
-          {{- else }}
-          emptyDir: {}
-          {{- end }}
-        - name: bin
-          hostPath: 
-            path: /usr/lib/nvidia-375/bin
-        - name: lib
-          hostPath: 
-            path: /usr/lib/nvidia-375
-        - name: libcuda
-          hostPath: 
-            path: /usr/lib/x86_64-linux-gnu
-        - hostPath:
-            path: /usr/local/cuda/extras/CUPTI/lib64
-          name: capti
+      volumes:
+      - name: notebooks
+        {{- if .Values.persistence.enabled }}
+        persistentVolumeClaim:
+          claimName: "{{ printf "%s-%s" .Release.Name .Chart.Name | trunc 24 }}"
+        {{- else }}
+        emptyDir: {}
+        {{- end }}
+      - name: bin
+        hostPath: 
+          path: /usr/lib/nvidia-375/bin
+      - name: lib
+        hostPath: 
+          path: /usr/lib/nvidia-375
+      - name: libcuda
+        hostPath: 
+          path: /usr/lib/x86_64-linux-gnu
+      - hostPath:
+          path: /usr/local/cuda/extras/CUPTI/lib64
+        name: capti
