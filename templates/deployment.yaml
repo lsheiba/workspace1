@@ -26,6 +26,7 @@ spec:
           limits:
             cpu: "{{ .Values.cpu.limits }}"
             memory: "{{ .Values.memory.limits }}"
+            alpha.kubernetes.io/nvidia-gpu: 1
         image: "{{ printf "%s:%s" .Values.image.Name .Values.image.Tag }}"
         ports:
         - containerPort: 8888
