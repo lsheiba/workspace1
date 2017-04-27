@@ -62,7 +62,7 @@ spec:
           path: /usr/lib/nvidia-375
       - name: libcuda
         hostPath: 
-          path: /usr/lib/x86_64-linux-gnu
+          path: /usr/local/cuda/lib64
       - hostPath:
           path: /usr/local/cuda/extras/CUPTI/lib64
         name: capti
