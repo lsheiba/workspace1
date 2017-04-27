@@ -47,7 +47,7 @@ spec:
         - mountPath: /usr/local/cuda/extras/CUPTI/lib64
           name: capti
         - mountPath: /usr/lib/cuda/cudnn
-          name:cudnn
+          name: cudnn
       volumes:
       - name: notebooks
         {{- if .Values.persistence.enabled }}
