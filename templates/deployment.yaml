@@ -56,10 +56,10 @@ spec:
         {{- end }}
       - name: bin
         hostPath: 
-          path: /usr/lib/nvidia-375.51/bin
+          path: /usr/lib/nvidia-375/bin
       - name: lib
         hostPath: 
-          path: /usr/lib/nvidia-375.51
+          path: /usr/lib/nvidia-375
       - name: libcuda
         hostPath: 
           path: /usr/lib/x86_64-linux-gnu
