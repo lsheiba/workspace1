@@ -37,7 +37,7 @@ spec:
           value: "$LD_LIBRARY_PATH:/usr/lib/nvidia:/usr/lib/cuda:/usr/local/cuda/extras/CUPTI/lib64"        
         volumeMounts:
         - name: notebooks
-          mountPath: "/notebooks/{{ .Chart.Name }}"
+          mountPath: "/notebooks/workspace"
         - mountPath: /usr/local/nvidia/bin
           name: bin
         - mountPath: /usr/lib/nvidia
