@@ -14,7 +14,7 @@ persistence:
     storageClass: standard
     nfs:
       server: 192.168.1.55
-      path: "/kuberlab/mnist"
+      path: "/kuberlab/fast"
     accessMode: ReadWriteMany
     size: 16Gi
 
